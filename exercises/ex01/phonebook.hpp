@@ -2,6 +2,14 @@
 # define PHONEBOOK_HPP
 
 # include <iostream>
+class Contact
+{
+    private:
+        std::string name;
+        std::string cellphone;
+    public:
+
+}
 
 class PhoneBook
 {
@@ -10,14 +18,5 @@ class PhoneBook
     //ações que podem ser feitas sobre o phonebook
 }
 
-class Contact
-{
-    private:
-    string name;
-    string cellphone;
-
-    public:
-
-}
 
 #endif

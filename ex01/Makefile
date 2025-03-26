@@ -1,10 +1,13 @@
 NAME = phonebook
 
-CPP = c++
+CC = c++
 
-FLAGS = -Wall -Wextra -Werror -std=c++98
+C_FLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-SRCS = 
+SRCS =	main.cpp \
+		PhoneBook.cpp \
+		Contact.cpp \
+		ContactVerifications.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
@@ -14,7 +17,7 @@ OBJS = ${SRCS:.cpp=.o}
 all: $(NAME)
 
 $(NAME):	$(OBJS)
-			@$(CPP) $(FLAGS) $(SRCS) -o $(NAME)
+			@$(CC) $(C_FLAGS) $(SRCS) -o $(NAME)
 
 clean:
 	@rm -f $(OBJS)

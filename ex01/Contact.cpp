@@ -1,0 +1,113 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/12 16:19:51 by lraggio           #+#    #+#             */
+/*   Updated: 2025/03/20 01:23:12 by lraggio          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "Contact.hpp"
+
+/*std::cout << "Your first name is: " << firstName << std::endl;
+std::cout << "Your last name is: " << lastName << std::endl;
+std::cout << "Your nickname is: " << nickname << std::endl;
+std::cout << "Your phone number is: " << phoneNumber << std::endl;
+std::cout << "I won't tell your daskest secret." << std::endl;*/
+
+Contact::Contact() {};
+
+Contact::~Contact() {};
+
+void	Contact::printContact() const
+{
+	std::cout << "First name: " << firstName << std::endl;
+	std::cout << "Last name is: " << lastName << std::endl;
+	std::cout << "Nickname is: " << nickname << std::endl;
+	std::cout << "Phone number is: " << phoneNumber << std::endl;
+	std::cout << "Darkest secret: " << darkestSecret << std::endl;
+}
+
+void	Contact::setContact()
+{
+	setFirstName();
+	setLastName();
+	setNickname();
+	setPhoneNumber();
+	setDarkestSecret();
+	std::cout << "The contact was successfully added! ✅" << std::endl;
+}
+
+void	Contact::setFirstName()
+{
+	std::string input;
+
+	std::cout << "First Name: ";
+	std::getline(std::cin, input);
+	while (!is_valid_input(input, "'First Name'"))
+	{
+		std::cout << "Enter a valid first name: ";
+		std::getline(std::cin, input);
+	}
+	this->firstName = format_string(input);
+}
+
+void	Contact::setLastName()
+{
+	std::string input;
+
+	std::cout << "Last Name: ";
+	std::getline(std::cin, input);
+	while (!is_valid_input(input, "'Last Name'"))
+	{
+		std::cout << "Enter a valid last name: ";
+		std::getline(std::cin, input);
+	}
+	this->lastName = format_string(input);
+}
+
+void	Contact::setNickname()
+{
+	std::string input;
+
+	std::cout << "Nickname: ";
+	std::getline(std::cin, input);
+	while (!is_valid_input(input, "'Nickname'"))
+	{
+		std::cout << "Enter a valid nickname: ";
+		std::getline(std::cin, input);
+	}
+	this->nickname = input;
+}
+
+void	Contact::setPhoneNumber()
+{
+	std::string input;
+
+	std::cout << "PhoneNumber: ";
+	std::getline(std::cin, input);
+	while (!is_valid_input(input, "'Phone Number'"))
+		{
+			std::cout << "Enter a valid phone number: ";
+			std::getline(std::cin, input);
+		}
+	this->phoneNumber = input;
+}
+
+void	Contact::setDarkestSecret()
+{
+	std::string input;
+
+	std::cout << "Tell me your darkest secret. I sware I'll keep this a secret." << std::endl;
+	std::getline(std::cin, input);
+	while (!is_valid_input(input, "'Darkest Secret'"))
+		{
+			std::cout << "It's okay if you don't want to share a secret with me. ";
+			std::cout << "You can also write something randomly 😝 " << std::endl;
+			std::getline(std::cin, input);
+		}
+	this->darkestSecret = input;
+}

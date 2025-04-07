@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
+/*   By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 15:27:05 by lraggio           #+#    #+#             */
-/*   Updated: 2025/03/20 00:43:56 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/04/07 17:47:41 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ void	phonebook_loop()
 	while (42)
 	{
 		std::getline(std::cin, command);
-		/*if (command == "ADD")
+		if (command == "ADD")
 		{
 			std::cout << BLUE "Adding a contact to PhoneBook" RESET << std::endl;
-			phonebook.addContact(phonebook, contact);
+			phonebook.addContact(contact);
 		}
 		else if (command == "SEARCH")
 		{
@@ -44,7 +44,7 @@ void	phonebook_loop()
 			break ;
 		}
 		else
-			std::cout << RED "Invalid command. Use ADD, SEARCH or EXIT." RESET << std::endl;*/
+			std::cout << RED "Invalid command. Use ADD, SEARCH or EXIT." RESET << std::endl;
 	}
 }
 

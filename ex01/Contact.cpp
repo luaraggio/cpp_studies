@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
+/*   By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 16:19:51 by lraggio           #+#    #+#             */
-/*   Updated: 2025/03/20 01:23:12 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/04/07 17:34:27 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,4 +110,29 @@ void	Contact::setDarkestSecret()
 			std::getline(std::cin, input);
 		}
 	this->darkestSecret = input;
+}
+
+std::string	Contact::getFirstName() const
+{
+	return (this->firstName);
+}
+
+std::string	Contact::getLastName() const
+{
+	return (this->lastName);
+}
+
+std::string	Contact::getNickname() const
+{
+	return (this->nickname);
+}
+
+std::string	Contact::getPhoneNumber() const
+{
+	return (this->phoneNumber);
+}
+
+std::string	Contact::getDarkestSecret() const
+{
+	return (this->darkestSecret);
 }

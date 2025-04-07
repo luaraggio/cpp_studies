@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
+/*   By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 13:51:46 by lraggio           #+#    #+#             */
-/*   Updated: 2025/03/20 01:30:56 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/04/07 17:51:18 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+
+PhoneBook::~PhoneBook() {};
 
 PhoneBook::PhoneBook()
 {
@@ -19,7 +21,7 @@ PhoneBook::PhoneBook()
 
 	this->index = 0;
 };
-PhoneBook::~PhoneBook() {};
+
 void PhoneBook::addContact(Contact contact)
 {
 	int	position;
@@ -36,11 +38,6 @@ void    print_phonebook()
 	std::cout << "--------------------------------------------\n";
 	std::cout << "| Index | First Name | Last Name | Nickname |\n";
 	std::cout << "--------------------------------------------\n";
-}
-
-std::string Contact::getFirstName() const
-{
-    return (this->firstName);
 }
 
 void PhoneBook::displayAllContacts() const

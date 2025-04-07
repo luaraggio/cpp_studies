@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
+/*   By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 16:57:39 by lraggio           #+#    #+#             */
-/*   Updated: 2025/03/20 01:24:58 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/04/07 17:33:23 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define CONTACT_HPP
 
 # include "Contact.hpp"
-# include "iostream"
+# include <iostream>
 # include <cctype>
 # include <iomanip>
 # include <string>
@@ -39,6 +39,10 @@ class Contact
 	void setContact();
 	void printContact() const;
 	std::string Contact::getFirstName() const;
+	std::string Contact::getLastName()	const;
+	std::string Contact::getNickname()	const;
+	std::string Contact::getPhoneNumber()	const;
+	std::string Contact::getDarkestSecret()	const;
 };
 
 std::string format_string(std::string input);

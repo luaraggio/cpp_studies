@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
+/*   By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 16:19:46 by lraggio           #+#    #+#             */
-/*   Updated: 2025/03/20 01:13:34 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/04/08 13:20:59 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,7 @@ class PhoneBook
 	PhoneBook(void);
 	~PhoneBook(void);
 	void addContact(Contact contact);
-	void displayAllContacts() const;
-	void searchContact();
-	//void displayContact();
+	void displayAllContacts(Contact contact) const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 15:27:05 by lraggio           #+#    #+#             */
-/*   Updated: 2025/04/07 17:47:41 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/04/08 13:21:07 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	phonebook_loop()
 		else if (command == "SEARCH")
 		{
 			std::cout << BLUE "Searching a contact in PhoneBook" RESET << std::endl;
-			phonebook.searchContact();
+			phonebook.displayAllContacts(contact);
 		}
 		else if (command == "EXIT")
 		{

@@ -3,14 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ContactVerifications.cpp                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
+/*   By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 23:06:52 by lraggio           #+#    #+#             */
-/*   Updated: 2025/03/19 23:21:45 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/04/09 13:43:47 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
+
+std::string format_string_table(std::string name)
+{
+	if (name.length() > 10)
+	{
+		name = name.substr(0, 9);
+		name += ".";
+	}
+	else
+	{
+		while (name.length() < 10)
+			name += " ";
+	}
+	return (name);
+}
 
 std::string format_string(std::string input)
 {

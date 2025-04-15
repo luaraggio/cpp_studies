@@ -6,29 +6,33 @@
 /*   By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 16:19:51 by lraggio           #+#    #+#             */
-/*   Updated: 2025/04/07 17:34:27 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/04/09 16:31:55 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-/*std::cout << "Your first name is: " << firstName << std::endl;
-std::cout << "Your last name is: " << lastName << std::endl;
-std::cout << "Your nickname is: " << nickname << std::endl;
-std::cout << "Your phone number is: " << phoneNumber << std::endl;
-std::cout << "I won't tell your daskest secret." << std::endl;*/
-
 Contact::Contact() {};
 
 Contact::~Contact() {};
 
-void	Contact::printContact() const
+void	Contact::printDetailedContact(Contact contact) const
 {
 	std::cout << "First name: " << firstName << std::endl;
 	std::cout << "Last name is: " << lastName << std::endl;
 	std::cout << "Nickname is: " << nickname << std::endl;
 	std::cout << "Phone number is: " << phoneNumber << std::endl;
 	std::cout << "Darkest secret: " << darkestSecret << std::endl;
+	std::cout << "--------------------------------------------" << std::endl;
+}
+
+void	Contact::printContacts(Contact contact, std::string index) const
+{
+	std::cout << "| Index | First Name | Last Name | Nickname |\n";
+	std::cout << std::setw(11) << format_string_table(contact.firstName) << " |";
+	std::cout << std::setw(10) << format_string_table(contact.lastName) << " |";
+	std::cout << std::setw(9) << format_string_table(contact.nickname) << " |" << std::endl;
+	std::cout << "--------------------------------------------" << std::endl;
 }
 
 void	Contact::setContact()

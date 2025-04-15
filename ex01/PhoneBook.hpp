@@ -6,7 +6,7 @@
 /*   By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 16:19:46 by lraggio           #+#    #+#             */
-/*   Updated: 2025/04/08 13:20:59 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/04/09 14:20:06 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ class PhoneBook
 	PhoneBook(void);
 	~PhoneBook(void);
 	void addContact(Contact contact);
-	void displayAllContacts(Contact contact) const;
+	void displayAllContacts(Contact contact, std::string command) const;
+	void displayDetailedContact(Contact contact) const;
 };
 
 #endif

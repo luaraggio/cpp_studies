@@ -6,7 +6,7 @@
 /*   By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 16:57:39 by lraggio           #+#    #+#             */
-/*   Updated: 2025/04/07 17:33:23 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/04/09 14:19:50 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,17 @@ class Contact
 	void setPhoneNumber();
 	void setDarkestSecret();
 	void setContact();
-	void printContact() const;
-	std::string Contact::getFirstName() const;
-	std::string Contact::getLastName()	const;
-	std::string Contact::getNickname()	const;
-	std::string Contact::getPhoneNumber()	const;
-	std::string Contact::getDarkestSecret()	const;
+	void printContacts(Contact contact, std::string	command) const;
+	void printDetailedContact(Contact contact) const;
+	std::string getFirstName() const;
+	std::string getLastName()	const;
+	std::string getNickname()	const;
+	std::string getPhoneNumber()	const;
+	std::string getDarkestSecret()	const;
 };
 
 std::string format_string(std::string input);
+std::string format_string_table(std::string name);
 bool	has_only_letters(std::string input);
 bool	has_only_numbers(std::string input);
 bool	is_valid_input(std::string input, const std::string type);

@@ -6,7 +6,7 @@
 /*   By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 15:27:05 by lraggio           #+#    #+#             */
-/*   Updated: 2025/04/08 13:21:07 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/04/09 13:51:25 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	print_phonebook_welcome()
 {
 	std::cout << PURPLE "Hi, welcome back to 80s and their unbelievable technology! :D\n" RESET;
 	std::cout << PURPLE "You just found My Awesome PhoneBook.\n" RESET;
-	std::cout << "Enter ADD, SEARCH or EXIT." << std::endl;
 }
 
 void	phonebook_loop()
@@ -27,6 +26,7 @@ void	phonebook_loop()
 
 	while (42)
 	{
+		std::cout << "Enter ADD, SEARCH or EXIT." << std::endl;
 		std::getline(std::cin, command);
 		if (command == "ADD")
 		{
@@ -36,7 +36,7 @@ void	phonebook_loop()
 		else if (command == "SEARCH")
 		{
 			std::cout << BLUE "Searching a contact in PhoneBook" RESET << std::endl;
-			phonebook.displayAllContacts(contact);
+			phonebook.displayAllContacts(contact, command);
 		}
 		else if (command == "EXIT")
 		{

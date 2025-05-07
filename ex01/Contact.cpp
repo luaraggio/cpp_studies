@@ -6,7 +6,7 @@
 /*   By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 16:19:51 by lraggio           #+#    #+#             */
-/*   Updated: 2025/04/09 16:31:55 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/05/06 13:18:05 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ Contact::~Contact() {};
 
 void	Contact::printDetailedContact(Contact contact) const
 {
-	std::cout << "First name: " << firstName << std::endl;
-	std::cout << "Last name is: " << lastName << std::endl;
+	std::cout << "First name: " << contact.firstName << std::endl;
+	std::cout << "Last name is: " << contact.lastName << std::endl;
 	std::cout << "Nickname is: " << nickname << std::endl;
 	std::cout << "Phone number is: " << phoneNumber << std::endl;
 	std::cout << "Darkest secret: " << darkestSecret << std::endl;

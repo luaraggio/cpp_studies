@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
+/*   By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 15:27:05 by lraggio           #+#    #+#             */
-/*   Updated: 2025/05/07 11:29:32 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/05/09 15:10:26 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	print_phonebook_welcome()
 {
 	std::cout << PURPLE "Hi, welcome back to 80s and their unbelievable technology! :D\n" RESET;
 	std::cout << PURPLE "You just found My Awesome PhoneBook.\n" RESET;
-	std::cout << "Enter ADD, SEARCH or EXIT." << std::endl;
 }
 
 void	phonebook_loop()
@@ -27,19 +26,19 @@ void	phonebook_loop()
 
 	while (42)
 	{
+		std::cout << "Enter ADD, SEARCH or EXIT." << std::endl;
 		std::getline(std::cin, command);
-		if (command == "ADD")
+		if (command == "ADD" || command == "add")
 		{
 			std::cout << BLUE "Adding a contact to PhoneBook" RESET << std::endl;
 			phonebook.addContact(contact);
 		}
-		else if (command == "SEARCH")
+		else if (command == "SEARCH" || command == "search")
 		{
 			std::cout << BLUE "Searching a contact in PhoneBook" RESET << std::endl;
 			phonebook.displayAllContacts();
-			phonebook.searchContact();
 		}
-		else if (command == "EXIT")
+		else if (command == "EXIT" || command == "exit")
 		{
 			std::cout << BLUE "Goodbye! (:" RESET << std::endl;
 			break ;

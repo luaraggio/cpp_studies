@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
+/*   By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 16:19:51 by lraggio           #+#    #+#             */
-/*   Updated: 2025/05/07 11:16:52 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/05/09 15:06:44 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	Contact::printDetailedContact() const
 	std::cout << "Nickname is: " << nickname << std::endl;
 	std::cout << "Phone number is: " << phoneNumber << std::endl;
 	std::cout << "Darkest secret: " << darkestSecret << std::endl;
-	std::cout << "--------------------------------------------" << std::endl;
+	std::cout << std::endl;
 }
 
 void	Contact::printContacts() const

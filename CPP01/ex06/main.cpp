@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/15 00:03:46 by lraggio           #+#    #+#             */
-/*   Updated: 2025/05/10 16:00:54 by lraggio          ###   ########.fr       */
+/*   Created: 2025/05/10 19:19:45 by lraggio           #+#    #+#             */
+/*   Updated: 2025/05/13 10:17:08 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
+#include "HarlFilter.hpp"
 
-HumanA::HumanA(std::string name, Weapon &weapon) : weapon(weapon) {
-	this->name = name;
-}
+int	main(int argc, char **argv) {
+	if (argc != 2) {
+		std::cout << "Error. Pass a valid input to Harl Filter." << std::endl;
+		return (1);
+	}
+	HarlFilter harlFilter;
 
-HumanA::~HumanA(){}
-
-void	HumanA::attack() {
-	std::cout << this->name << " attacks with their " << this->weapon.getType() << std::endl;
+	harlFilter.complain(argv[1]);
 }

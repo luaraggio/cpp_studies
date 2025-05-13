@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   HarlFilter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/15 00:03:39 by lraggio           #+#    #+#             */
-/*   Updated: 2025/05/10 15:47:01 by lraggio          ###   ########.fr       */
+/*   Created: 2025/05/13 09:42:28 by lraggio           #+#    #+#             */
+/*   Updated: 2025/05/13 09:44:37 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-# define HUMANB_HPP
+#ifndef HARLFILTER_HPP
+# define HARLFILTER_HPP
 
+# define CALL_MEMBER_FN(object,ptrToMember)  ((object).*(ptrToMember))
 # include <iostream>
-# include "Weapon.hpp"
 
-class HumanB
-{
+class HarlFilter {
 	private:
-		std::string name;
-		Weapon *weapon;
+		void	debug(void);
+		void	info(void);
+		void	warning(void);
+		void	error(void);
+		std::string	message_list[4];
+		void	(HarlFilter::*log_methods[4]) (void);
 	public:
-		HumanB(std::string name);
-		~HumanB();
-		void	attack();
-		void	setWeapon(Weapon &weapon);
+		HarlFilter();
+		~HarlFilter();
+		void	complain(std::string level);
 };
 
 #endif

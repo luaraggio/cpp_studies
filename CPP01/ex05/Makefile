@@ -1,13 +1,11 @@
-NAME = unnecessary_violance
+NAME = Harl2.0
 
 CC = c++
 
 C_FLAGS = -g -Wall -Wextra -Werror -std=c++98
 
 SRCS =		main.cpp \
-			Weapon.cpp \
-			HumanA.cpp \
-			HumanB.cpp
+			Harl.cpp
 
 RESET =		\033[0m
 PINK =		\033[0;35m

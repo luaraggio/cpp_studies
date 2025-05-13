@@ -2,7 +2,7 @@ NAME = sed_is_for_losers
 
 CC = c++
 
-C_FLAGS = -Wall -Wextra -Werror -std=c++98
+C_FLAGS = -g -Wall -Wextra -Werror -std=c++98
 
 SRCS =		main.cpp \
 			Sed.cpp

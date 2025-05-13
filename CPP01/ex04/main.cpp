@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
+/*   By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 18:27:38 by lraggio           #+#    #+#             */
-/*   Updated: 2025/05/13 18:34:18 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/05/13 18:48:35 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
- # include <iostream>
- # include <fstream>
+ #include <iostream>
+ #include <fstream>
 
 void	event_loop(std::fstream &file, std::ofstream &new_file, const std::string &find, const std::string &replace) {
 
@@ -53,12 +53,14 @@ int	main(int argc, char **argv)
 	std::string s1(argv[2]);
 	std::string s2(argv[3]);
 
-	std::fstream file = std::fstream(filename);
+	std::fstream file(filename.c_str(), std::ios::in);
 	if (!file.good()) {
 		std::cout << "error: something went wrong with file openning" << std::endl;
 		return (false);
 	}
-	std::ofstream new_file = std::ofstream(filename + ".replace", std::ios_base::app | std::ios_base::out);
+	std::ofstream new_file((filename + ".replace").c_str(),
+	std::ios_base::app | std::ios_base::out);
 	event_loop(file, new_file, s1, s2);
+	file.close();
 	new_file.close();
 }

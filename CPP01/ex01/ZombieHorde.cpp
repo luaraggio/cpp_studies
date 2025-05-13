@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
+/*   By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 00:19:13 by lraggio           #+#    #+#             */
-/*   Updated: 2025/05/01 18:30:18 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/05/13 18:50:49 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,3 @@ Zombie*	zombieHorde(int N, std::string name)
 	}
 	return (horde);
 }
-
-/*It must allocate N Zombie objects in a single allocation. Then, it has t*/

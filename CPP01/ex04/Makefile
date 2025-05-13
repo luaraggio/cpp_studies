@@ -4,8 +4,7 @@ CC = c++
 
 C_FLAGS = -g -Wall -Wextra -Werror -std=c++98
 
-SRCS =		main.cpp \
-			Sed.cpp
+SRCS =		main.cpp 
 
 RESET =		\033[0m
 PINK =		\033[0;35m

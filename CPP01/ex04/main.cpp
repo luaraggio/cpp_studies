@@ -6,11 +6,12 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 18:27:38 by lraggio           #+#    #+#             */
-/*   Updated: 2025/05/13 09:53:11 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/05/13 18:34:18 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Sed.hpp"
+ # include <iostream>
+ # include <fstream>
 
 void	event_loop(std::fstream &file, std::ofstream &new_file, const std::string &find, const std::string &replace) {
 
@@ -45,7 +46,7 @@ int	main(int argc, char **argv)
 	{
 		std::cout << "Error.\nInvalid arguments. It must be: ./sed <file.txt>"
 		" <first string> <second string>" << std::endl;
-		return (ERROR);
+		return (false);
 	}
 
 	std::string filename(argv[1]);

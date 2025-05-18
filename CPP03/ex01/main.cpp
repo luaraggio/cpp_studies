@@ -6,14 +6,13 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 20:06:52 by lraggio           #+#    #+#             */
-/*   Updated: 2025/05/17 18:45:28 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/05/18 14:40:19 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 int main() {
-
 	ScavTrap serena("Serena");
 
 	serena.attack("Enemy");

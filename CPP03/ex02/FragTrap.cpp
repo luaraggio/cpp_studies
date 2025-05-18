@@ -6,17 +6,17 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 19:14:31 by lraggio           #+#    #+#             */
-/*   Updated: 2025/05/18 14:33:29 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/05/18 14:46:55 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name) {
-	std::cout << "FragTrap " << this->_name << " was constructed" << std::endl;
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;
 	this->_attackDamage = 30;
+	std::cout << "FragTrap " << this->_name << " was constructed" << std::endl;
 }
 
 FragTrap::~FragTrap() {
@@ -24,14 +24,13 @@ FragTrap::~FragTrap() {
 }
 
 FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other._name) {
-	std::cout << "FragTrap copy constructor called" << std::endl;
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;
 	this->_attackDamage = 30;
+	std::cout << "FragTrap copy constructor called" << std::endl;
 }
 
 FragTrap &FragTrap::operator=(const FragTrap &rhs) {
-	std::cout << "FragTrap assignment operator called" << std::endl;
 	if (this != &rhs)
 	{
 		this->_name = rhs._name;
@@ -40,6 +39,7 @@ FragTrap &FragTrap::operator=(const FragTrap &rhs) {
 		this->_attackDamage = rhs._attackDamage;
 	}
 	return (*this);
+	std::cout << "FragTrap assignment operator called" << std::endl;
 }
 
 void	FragTrap::attack(const std::string& target) {

@@ -6,7 +6,7 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 20:06:52 by lraggio           #+#    #+#             */
-/*   Updated: 2025/05/17 21:27:25 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/05/18 14:35:20 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int main() {
 	FragTrap a("Robot");
 	//FragTrap b(a);
-	FragTrap c("Juliana");
-	c = a;
+	//FragTrap c("Juliana");
+	//c = a;
 
 	a.attack("Enemy");
 	a.takeDamage(20);
@@ -27,10 +27,10 @@ int main() {
 	b.takeDamage(20);
 	b.beRepaired(10);
 	b.highFivesGuys();*/
-	std::cout << "------------------------------------------------------" << std::endl;
+	/*std::cout << "------------------------------------------------------" << std::endl;
 	c.attack("Enemy");
 	c.takeDamage(20);
 	c.beRepaired(10);
-	c.highFivesGuys();
+	c.highFivesGuys();*/
 }
 

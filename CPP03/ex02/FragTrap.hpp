@@ -6,7 +6,7 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 19:06:27 by lraggio           #+#    #+#             */
-/*   Updated: 2025/05/17 22:33:21 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/05/18 14:33:07 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ class FragTrap : public ClapTrap {
 		FragTrap& operator=(const FragTrap& rhs);
 		~FragTrap();
 		void	attack(const std::string& target);
+		void	takeDamage(unsigned int amount);
+		void	beRepaired(unsigned int amount);
 		void	highFivesGuys(void);
 };
 

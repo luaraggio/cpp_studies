@@ -6,7 +6,7 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 20:07:30 by lraggio           #+#    #+#             */
-/*   Updated: 2025/05/17 21:45:56 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/05/17 22:51:22 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other) {
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << "Claptrap: " << this->_name << " was deconstructed" << std::endl;
+	std::cout << "Claptrap: " << this->_name << " was destroyed" << std::endl;
 }
 
 void	ClapTrap::attack(const std::string &target) {

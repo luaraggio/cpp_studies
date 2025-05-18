@@ -2,7 +2,7 @@ NAME = ex02
 
 CC = c++
 
-C_FLAGS = -Wall -Wextra -Werror -std=c++98
+C_FLAGS = -g -Wall -Wextra -Werror -std=c++98
 
 SRCS =		main.cpp \
 			ClapTrap.cpp \
@@ -18,7 +18,7 @@ OBJS =		${SRCS:.cpp=.o}
 			$(CC) $(C_FLAGS) -c $< -o $@
 
 all:		$(NAME)
-			@echo "$(PINK)$(NAME) is ready! 🧟🧠$(RESET)"
+			@echo "$(PINK)$(NAME) is ready! $(RESET)"
 
 $(NAME):	$(OBJS)
 			@$(CC) $(C_FLAGS) $(SRCS) -o $(NAME)

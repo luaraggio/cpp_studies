@@ -6,7 +6,7 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 23:28:29 by lraggio           #+#    #+#             */
-/*   Updated: 2025/05/17 18:35:19 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/05/17 22:50:10 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 }
 
 ScavTrap::~ScavTrap() {
-	std::cout << "ScavTrap " << this->_name << " deconstructor called" << std::endl;
+	std::cout << "ScavTrap " << this->_name << " destructor called" << std::endl;
 }
 
 void ScavTrap::attack(const std::string& target) {

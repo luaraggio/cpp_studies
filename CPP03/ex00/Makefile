@@ -17,7 +17,7 @@ OBJS =		${SRCS:.cpp=.o}
 			$(CC) $(C_FLAGS) -c $< -o $@
 
 all:		$(NAME)
-			@echo "$(PINK)$(NAME) is ready! 🧟🧠$(RESET)"
+			@echo "$(PINK)$(NAME) is ready!$(RESET)"
 
 $(NAME):	$(OBJS)
 			@$(CC) $(C_FLAGS) $(SRCS) -o $(NAME)

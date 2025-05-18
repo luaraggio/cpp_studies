@@ -6,7 +6,7 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 20:07:30 by lraggio           #+#    #+#             */
-/*   Updated: 2025/05/17 18:59:22 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/05/17 21:40:12 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,24 +39,24 @@ ClapTrap	ClapTrap:: operator=(const ClapTrap &rhs) {
 
 void	ClapTrap::attack(const std::string &target) {
 	if (this->_energyPoints == 0 || this->_hitPoints == 0) {
-		std::cout << "ClapTrap " << this->_name << "has no hit points or no energy points to attack" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " has no hit points or no energy points to attack" << std::endl;
 		return ;
 	}
 	this->_energyPoints--;
-	std::cout << "ClapTrap " << this->_name << "attacks " << target << ","
-		" causing " <<  this->_attackDamage << "points of damage!" << std::endl;
+	std::cout << "ClapTrap " << this->_name << " attacks " << target << ","
+		" causing " <<  this->_attackDamage << " points of damage!" << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount) {
 	if (amount >= this->_hitPoints) {
 		this->_hitPoints = 0;
-		std::cout << "hit points empty for Claptrap " << this->_name << std::endl;
+		std::cout << " hit points empty for Claptrap " << this->_name << std::endl;
 	}
 	else {
 		this->_hitPoints -= amount;
 	}
 	std::cout << "ClapTrap " << this->_name << " takes " << amount
-		<< " points of damage.\nHit points: " << this->_hitPoints << "." << std::endl;
+		<< " points of damage. Hit points: " << this->_hitPoints << "." << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount) {
@@ -67,5 +67,5 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 	this->_hitPoints += amount;
 	_energyPoints--;
 	std::cout << "ClapTrap " << _name << " takes " << amount
-		<< " points of repair.\nHit points: " << _hitPoints << "." << std::endl;
+		<< " points of repair. Hit points: " << _hitPoints << "." << std::endl;
 }

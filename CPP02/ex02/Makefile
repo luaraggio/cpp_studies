@@ -13,7 +13,7 @@ BLUE =		\033[0;34m
 
 OBJS =		${SRCS:.cpp=.o}
 
-%cpp:	%.o
+.cpp.o:
 			$(CC) $(C_FLAGS) -c $< -o $@
 
 all:		$(NAME)

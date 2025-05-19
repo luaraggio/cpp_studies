@@ -6,20 +6,11 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/18 15:02:51 by lraggio           #+#    #+#             */
-/*   Updated: 2025/05/18 18:52:45 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/05/18 20:07:26 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
-
-/*
-• Name, which is passed as a parameter to a constructor OK
-• ClapTrap::name (parameter of the constructor + "_clap_name" suffix) ok
-• Hit points (FragTrap) ok
-• Energy points (ScavTrap) ok
-• Attack damage (FragTrap) ok
-• attack() (ScavTrap)
-*/
 
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"),
 	ScavTrap(), FragTrap(), _name(name) {

@@ -6,7 +6,7 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 17:15:46 by lraggio           #+#    #+#             */
-/*   Updated: 2025/05/17 22:10:47 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/05/18 21:54:23 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@
 
 class Cat: public Animal {
 	public:
+		Cat();
 		Cat(std::string type);
+		Cat (const Cat& other);
+		Cat& operator=(const Cat& rhs);
 		~Cat();
-		void	makeSound();
 };
 
 #endif

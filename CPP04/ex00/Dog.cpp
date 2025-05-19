@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/17 22:09:07 by lraggio           #+#    #+#             */
-/*   Updated: 2025/05/18 21:54:19 by lraggio          ###   ########.fr       */
+/*   Created: 2025/05/18 21:07:47 by lraggio           #+#    #+#             */
+/*   Updated: 2025/05/18 21:54:13 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Dog.hpp"
 
-Cat::Cat() {
-	std::cout << "Cat default constructor called" << std::endl;
+Dog::Dog() {
+	std::cout << "Dog default constructor called" << std::endl;
 }
 
-Cat::Cat(std::string type) : Animal(_type) {
-	this->_type = "Cat";
+Dog::Dog(std::string type) : Animal(_type) {
+	this->_type = "Dog";
 	std::cout << this->_type << " constructor called" << std::endl;
 }
 
-Cat::~Cat() {
+Dog::~Dog() {
 	std::cout << this->_type << " destructor called" << std::endl;
 }
 
-Cat::Cat(const Cat &other) {
+Dog::Dog(const Dog &other) {
 	*this = other;
 }
 
-Cat& Cat::operator=(const Cat &rhs) {
+Dog& Dog::operator=(const Dog &rhs) {
 	if (this != &rhs) {
 		this->_type = rhs._type;
 	}

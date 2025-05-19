@@ -1,28 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/17 17:15:45 by lraggio           #+#    #+#             */
-/*   Updated: 2025/05/18 21:21:37 by lraggio          ###   ########.fr       */
+/*   Created: 2025/05/18 20:04:20 by lraggio           #+#    #+#             */
+/*   Updated: 2025/05/18 20:04:31 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#ifndef DOG_HPP
-# define DOG_HPP
-
-# include "Animal.hpp"
-
-class Dog: public Animal {
-	public:
-		Dog();
-		Dog(std::string type);
-		Dog(const Dog& other);
-		Dog& operator=(const Dog& rhs);
-		~Dog();
-};
-
-#endif
+#include "WrongAnimal.hpp"

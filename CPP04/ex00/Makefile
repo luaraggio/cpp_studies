@@ -4,7 +4,11 @@ CC = c++
 
 C_FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS =		main.cpp
+SRCS =		main.cpp \
+			Animal.cpp \
+			Cat.cpp \
+			Dog.cpp \
+			WrongAnimal.cpp
 
 RESET =		\033[0m
 PINK =		\033[0;35m

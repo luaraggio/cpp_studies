@@ -6,15 +6,15 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 17:13:41 by lraggio           #+#    #+#             */
-/*   Updated: 2025/05/17 17:22:29 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/05/18 21:21:19 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "Animal.hpp"
+#include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 
-/*int main() {
+int main() {
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
@@ -23,6 +23,5 @@
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
 	meta->makeSound();
-	...
 	return 0;
-}*/
+}

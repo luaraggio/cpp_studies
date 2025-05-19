@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
+/*   By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 21:31:46 by lraggio           #+#    #+#             */
-/*   Updated: 2025/05/16 19:58:50 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/05/19 19:16:27 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Fixed::Fixed(const Fixed &other) {
 };
 
 Fixed& Fixed::operator=(const Fixed &other) {
-	//std::cout << "Copy assignment operator called" << std::endl;
+	//std::cout << "Assignment operator called" << std::endl;
 	if (this != &other) {
         this->_fixedPointValue = other.getRawBits();
     }

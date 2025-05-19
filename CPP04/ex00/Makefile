@@ -8,7 +8,8 @@ SRCS =		main.cpp \
 			Animal.cpp \
 			Cat.cpp \
 			Dog.cpp \
-			WrongAnimal.cpp
+			WrongAnimal.cpp \
+			WrongCat.cpp
 
 RESET =		\033[0m
 PINK =		\033[0;35m

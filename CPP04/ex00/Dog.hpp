@@ -6,7 +6,7 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 17:15:45 by lraggio           #+#    #+#             */
-/*   Updated: 2025/05/18 21:21:37 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/05/18 22:06:00 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Dog: public Animal {
 		Dog(const Dog& other);
 		Dog& operator=(const Dog& rhs);
 		~Dog();
+		void	makeSound() const;
 };
 
 #endif

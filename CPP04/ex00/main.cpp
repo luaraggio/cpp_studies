@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
+/*   By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 17:13:41 by lraggio           #+#    #+#             */
-/*   Updated: 2025/05/18 22:25:19 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/05/22 20:20:18 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@ int main() {
 	std::cout << "------------------------------------------------------------" << std::endl;
 	const WrongAnimal* wrong_meta = new WrongAnimal();
 	const WrongAnimal* w = new WrongCat();
+	WrongCat cat1;
+	cat1.makeSound();
+	WrongCat cat2(cat1);
+	cat2.makeSound();
+	
 	std::cout << w->getType() << " " << std::endl;
 	w->makeSound(); //will output the cat sound!
 	wrong_meta->makeSound();

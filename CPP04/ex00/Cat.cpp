@@ -3,26 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
+/*   By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 22:09:07 by lraggio           #+#    #+#             */
-/*   Updated: 2025/05/18 22:03:55 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/05/22 20:12:58 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
 Cat::Cat() {
+	this->_type = "Cat";
 	std::cout << "Cat default constructor called" << std::endl;
 }
 
 Cat::Cat(std::string type) : Animal(type) {
 	this->_type = "Cat";
-	std::cout << this->_type << " constructor called" << std::endl;
+	std::cout << "Cat constructor called" << std::endl;
 }
 
 Cat::~Cat() {
-	std::cout << this->_type << " destructor called" << std::endl;
+	std::cout << "Cat destructor called" << std::endl;
 }
 
 Cat::Cat(const Cat &other) {

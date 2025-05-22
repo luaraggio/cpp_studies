@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
+/*   By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/18 22:14:55 by lraggio           #+#    #+#             */
-/*   Updated: 2025/05/18 22:22:12 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/05/22 19:05:54 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ WrongCat::WrongCat() {
 
 WrongCat::WrongCat(std::string type) : WrongAnimal(type) {
 	this->_type = "WrongCat";
-	std::cout << this->_type << " constructor called" << std::endl;
+	std::cout << "WrongCat constructor called" << std::endl;
 }
 
 WrongCat::~WrongCat() {
-	std::cout << this->_type << " destructor called" << std::endl;
+	std::cout << "WrongCat destructor called" << std::endl;
 }
 
 WrongCat::WrongCat(const WrongCat &other) {

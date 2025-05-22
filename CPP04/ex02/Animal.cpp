@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 22:04:04 by lraggio           #+#    #+#             */
-/*   Updated: 2025/05/22 20:12:40 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/05/22 18:09:03 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
 Animal::Animal() {
-	this->_type = "Default";
 	std::cout << "Animal default constructor called" << std::endl;
 }
 

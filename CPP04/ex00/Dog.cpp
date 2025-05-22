@@ -3,26 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
+/*   By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/18 21:07:47 by lraggio           #+#    #+#             */
-/*   Updated: 2025/05/18 22:05:47 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/05/22 20:13:09 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
 Dog::Dog() {
+	this->_type = "Dog";
 	std::cout << "Dog default constructor called" << std::endl;
 }
 
 Dog::Dog(std::string type) : Animal(type) {
 	this->_type = "Dog";
-	std::cout << this->_type << " constructor called" << std::endl;
+	std::cout << "Dog constructor called" << std::endl;
 }
 
 Dog::~Dog() {
-	std::cout << this->_type << " destructor called" << std::endl;
+	std::cout << "Dog destructor called" << std::endl;
 }
 
 Dog::Dog(const Dog &other) {

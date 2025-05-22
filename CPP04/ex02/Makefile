@@ -1,4 +1,4 @@
-NAME = ex00
+NAME = ex02
 
 CC = c++
 
@@ -8,8 +8,7 @@ SRCS =		main.cpp \
 			Animal.cpp \
 			Cat.cpp \
 			Dog.cpp \
-			WrongAnimal.cpp \
-			WrongCat.cpp
+			Brain.cpp
 
 RESET =		\033[0m
 PINK =		\033[0;35m

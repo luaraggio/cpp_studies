@@ -6,7 +6,7 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 17:13:41 by lraggio           #+#    #+#             */
-/*   Updated: 2025/05/18 22:22:36 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/05/18 22:25:19 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,10 @@ int main() {
 	std::cout << w->getType() << " " << std::endl;
 	w->makeSound(); //will output the cat sound!
 	wrong_meta->makeSound();
+	delete j;
+	delete i;
+	delete meta;
+	delete wrong_meta;
+	delete w;
 	return 0;
 }

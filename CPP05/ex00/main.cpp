@@ -6,7 +6,7 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 11:47:40 by lraggio           #+#    #+#             */
-/*   Updated: 2025/08/27 12:29:18 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/11/24 15:20:37 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,30 @@
 #define RESET	"\033[0m"
 #define PINK	"\033[0;35m"
 #define RED 	"\033[0;31m"
+
+/**
+ * @brief Entry point for testing the Bureaucrat class.
+ *
+ * This main function demonstrates:
+ * - Correct creation of a Bureaucrat
+ * - Handling of invalid grades using exceptions
+ * - Incrementing and decrementing grades
+ * - Behavior at grade boundaries (1 and 150)
+ * - Copy assignment operator validation
+ *
+ * Colored output is used purely for visual clarity in the terminal:
+ * - PINK highlights the test section header.
+ * - RED highlights caught exceptions.
+ *
+ * The tests are divided as follows:
+ *  Test 1: Valid construction.
+ *  Test 2: Construction with an invalid grade (too high).
+ *  Test 3: Incrementing grades until an exception is triggered.
+ *  Test 4: Decrementing grades beyond the allowed limit.
+ *  Test 5: Testing the assignment operator.
+ *
+ * @return int Exit status.
+ */
 
 int main() {
 	std::cout << PINK "Testing Bureaucrat Exceptions:\n" RESET << std::endl;

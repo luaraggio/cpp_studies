@@ -6,11 +6,20 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 11:48:32 by lraggio           #+#    #+#             */
-/*   Updated: 2025/11/24 15:17:48 by lraggio          ###   ########.fr       */
+/*   Updated: 2025/12/25 16:45:36 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+
+/**
+ * @brief Default constructor for the Bureaucrat class.
+ *
+ * Initializes the bureaucrat with no params, as de definition of a default constructor
+ *
+ */
+
+Bureaucrat::Bureaucrat() {}
 
 /**
  * @brief Main constructor for the Bureaucrat class.

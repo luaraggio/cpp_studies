@@ -6,7 +6,7 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 13:12:07 by lraggio           #+#    #+#             */
-/*   Updated: 2025/12/27 10:54:05 by lraggio          ###   ########.fr       */
+/*   Updated: 2026/01/06 17:25:53 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <iostream>
 # include <exception>
-# include "Form.hpp"
+# include "AForm.hpp"
 
 /**
  * @class Bureaucrat
@@ -46,7 +46,8 @@ class Bureaucrat {
 		int	getGrade() const;
 		void	incrementGrade();
 		void	decrementGrade();
-		void	signForm(Form& f); //Form aqui não pode ser const porque vai ser modificado em isSigned!!!!!
+		void	signForm(AForm& f); //Form aqui não pode ser const porque vai ser modificado em isSigned!!!!!
+		void	executeForm(AForm const & form) const;
 
 		class	GradeTooHighException : public std::exception {
 			public:

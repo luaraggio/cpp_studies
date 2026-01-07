@@ -1,4 +1,4 @@
-NAME = ex01
+NAME = ex02
 
 CC = c++
 
@@ -6,7 +6,11 @@ C_FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS =		main.cpp \
 			Bureaucrat.cpp \
-			Form.cpp
+			AForm.cpp \
+			ShrubberyCreationForm.cpp \
+			RobotomyRequestForm.cpp \
+			PresidentialPardonForm.cpp
+
 
 RESET =		\033[0m
 PINK =		\033[0;35m
@@ -30,6 +34,7 @@ clean:
 fclean:
 			@rm -f $(NAME)
 			@rm -f $(OBJS)
+			@rm -f *_shrubbery
 			@echo "$(BLUE) 🧼 All cleaned$(RESET)"
 
 re:			fclean all

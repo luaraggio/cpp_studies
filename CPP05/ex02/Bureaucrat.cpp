@@ -6,7 +6,7 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 11:48:32 by lraggio           #+#    #+#             */
-/*   Updated: 2025/12/27 11:13:57 by lraggio          ###   ########.fr       */
+/*   Updated: 2026/01/06 17:31:22 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,7 +171,7 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& b) {
 	return (os);
 }
 
-void	Bureaucrat::signForm(Form& f) {
+void	Bureaucrat::signForm(AForm& f) {
 	try {
 		f.beSigned(*this);
 		std::cout << this->_name << " signed " << f.getName() << std::endl;
@@ -179,5 +179,15 @@ void	Bureaucrat::signForm(Form& f) {
 	}
 	catch (std::exception &e) {
 		std::cout << this->getName() << " couldn’t sign " << f.getName() << " because " << e.what() << std::endl;
+	}
+}
+
+void Bureaucrat::executeForm(AForm const & form) const {
+	try {
+		form.execute(*this);
+		std::cout << this->_name << " executed " << form.getName() << std::endl;
+	}
+	catch (std::exception & e) {
+		std::cout << this->_name << " couldn’t execute " << form.getName() << " because " << e.what() << std::endl;
 	}
 }

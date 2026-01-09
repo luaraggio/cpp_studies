@@ -5,10 +5,7 @@ CC = c++
 C_FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS =		main.cpp \
-			Base.cpp \
-			A.cpp \
-			B.cpp \
-			C.cpp
+			Base.cpp 
 
 RESET =		\033[0m
 PINK =		\033[0;35m

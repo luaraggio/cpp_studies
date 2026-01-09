@@ -6,7 +6,7 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 17:51:43 by lraggio           #+#    #+#             */
-/*   Updated: 2026/01/09 17:30:51 by lraggio          ###   ########.fr       */
+/*   Updated: 2026/01/09 18:45:37 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,15 @@ int main() {
 
 	// Seed the random number generator using the current time
 	// This should only be called once per program execution
-	srand(static_cast<unsigned int>(time(0)));
+	srand(time(NULL));
 
-	const int num_objects = 3;
-	Base* objects[num_objects];
+	Base* p = generate();
 
-	for (int i = 0; i < num_objects; ++i) {
-		objects[i] = createRandomClass();
-		objects[i]->identify(); // Use the object's functionality
-	}
+	identify(p);
+	identify(*p);
 
-	// Remember to free dynamically allocated memory
-	for (int i = 0; i < num_objects; ++i) {
-		delete objects[i];
-	}
+	delete p;
 
-	std::cout << PINK "\n========== END OF TEST ==========" RESET << std::endl;
+	std::cout << PINK "\n======= END OF TEST =======" RESET << std::endl;
 	return (0);
 }

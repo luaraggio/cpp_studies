@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/06 17:03:35 by lraggio           #+#    #+#             */
-/*   Updated: 2026/01/09 15:51:19 by lraggio          ###   ########.fr       */
+/*   Created: 2026/01/08 17:51:56 by lraggio           #+#    #+#             */
+/*   Updated: 2026/01/09 16:29:13 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMYREQUESTFORM_HPP
-# define ROBOTOMYREQUESTFORM_HPP
+#ifndef BASE_HPP
+# define BASE_HPP
 
-# include "AForm.hpp"
+# include <iostream>
 
-class	RobotomyRequestForm : public AForm {
-	private:
-		std::string	_target;
+class	Base {
 	public:
-		RobotomyRequestForm(std::string target);
-		RobotomyRequestForm(const RobotomyRequestForm& other);
-		RobotomyRequestForm& operator=(const RobotomyRequestForm& rhs);
-		~RobotomyRequestForm();
-		void	executeAction() const;
+		virtual ~Base();
+
+		Base*	generate();
+		void	identify(Base* p);
+		void	identify(Base& p);
 };
 
 #endif

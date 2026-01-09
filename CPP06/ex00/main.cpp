@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/06 17:03:35 by lraggio           #+#    #+#             */
-/*   Updated: 2026/01/09 15:51:19 by lraggio          ###   ########.fr       */
+/*   Created: 2026/01/07 19:59:19 by lraggio           #+#    #+#             */
+/*   Updated: 2026/01/09 14:46:53 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMYREQUESTFORM_HPP
-# define ROBOTOMYREQUESTFORM_HPP
+#include "ScalarConverter.hpp"
 
-# include "AForm.hpp"
+int	main(int argc, char **argv) {
+	if (argc != 2) {
+		std::cout << "Error: invalid input. It must be: ./convert <literal>" << std::endl;
+		return (1);
+	}
 
-class	RobotomyRequestForm : public AForm {
-	private:
-		std::string	_target;
-	public:
-		RobotomyRequestForm(std::string target);
-		RobotomyRequestForm(const RobotomyRequestForm& other);
-		RobotomyRequestForm& operator=(const RobotomyRequestForm& rhs);
-		~RobotomyRequestForm();
-		void	executeAction() const;
-};
-
-#endif
+	ScalarConverter::converter(argv[1]);
+	return (0);
+}

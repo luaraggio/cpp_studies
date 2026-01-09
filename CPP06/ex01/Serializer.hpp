@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/06 17:03:35 by lraggio           #+#    #+#             */
-/*   Updated: 2026/01/09 15:51:19 by lraggio          ###   ########.fr       */
+/*   Created: 2026/01/08 17:51:56 by lraggio           #+#    #+#             */
+/*   Updated: 2026/01/09 15:47:12 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMYREQUESTFORM_HPP
-# define ROBOTOMYREQUESTFORM_HPP
+#ifndef SERIALIZER_HPP
+# define SERIALIZER_HPP
 
-# include "AForm.hpp"
+# include <cstdint>
+# include <iostream>
 
-class	RobotomyRequestForm : public AForm {
+struct Data {
+		std::string name;
+		int	value;
+};
+
+class	Serializer {
 	private:
-		std::string	_target;
+		Serializer();
+		~Serializer();
 	public:
-		RobotomyRequestForm(std::string target);
-		RobotomyRequestForm(const RobotomyRequestForm& other);
-		RobotomyRequestForm& operator=(const RobotomyRequestForm& rhs);
-		~RobotomyRequestForm();
-		void	executeAction() const;
+		static uintptr_t serialize(Data* ptr);// It takes a pointer and converts it to the unsigned integer type uintptr_t
+		static Data* deserialize(uintptr_t raw);//It takes an unsigned integer parameter and converts it to a pointer to Data
 };
 
 #endif

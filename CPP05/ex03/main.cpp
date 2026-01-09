@@ -6,7 +6,7 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 11:17:22 by lraggio           #+#    #+#             */
-/*   Updated: 2026/01/07 19:44:45 by lraggio          ###   ########.fr       */
+/*   Updated: 2026/01/08 18:12:14 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 #define BLUE "\033[0;34m"
 
 int main() {
-	std::cout << PINK "\n========== CPP05 ex02 TESTS ==========" RESET << std::endl;
+	std::cout << PINK "\n========== CPP05 ex03 TESTS ==========" RESET << std::endl;
 	Intern intern;
 	AForm* form;
 

@@ -6,7 +6,7 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 17:51:43 by lraggio           #+#    #+#             */
-/*   Updated: 2026/01/09 17:04:43 by lraggio          ###   ########.fr       */
+/*   Updated: 2026/01/09 17:30:51 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 #include <iostream>
 #include <ctime>
+#include <cstdlib>
 
 #define RESET "\033[0m"
 #define PINK "\033[0;35m"
@@ -31,10 +32,10 @@ int main() {
 	const int num_objects = 3;
 	Base* objects[num_objects];
 
-	// for (int i = 0; i < num_objects; ++i) {
-	// 	objects[i] = createRandomClass();
-	// 	objects[i]->identify(); // Use the object's functionality
-	// }
+	for (int i = 0; i < num_objects; ++i) {
+		objects[i] = createRandomClass();
+		objects[i]->identify(); // Use the object's functionality
+	}
 
 	// Remember to free dynamically allocated memory
 	for (int i = 0; i < num_objects; ++i) {

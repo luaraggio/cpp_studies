@@ -6,11 +6,12 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 17:51:47 by lraggio           #+#    #+#             */
-/*   Updated: 2026/01/09 16:33:44 by lraggio          ###   ########.fr       */
+/*   Updated: 2026/01/09 17:24:09 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Base.hpp"
+#include <cstdlib>
 
 Base::~Base() {}
 
@@ -21,13 +22,12 @@ Base::~Base() {}
 // void identify(Base& p);
 
 void	createRandomClass() {
-	
+	std::rand();
 }
 
 Base*	Base::generate() {
 	// It randomly instantiates A, B, or C and returns the instance as a Base pointer. Feel free
 	// to use anything you like for the random choice implementation
-
 	createRandomClass();
 }
 

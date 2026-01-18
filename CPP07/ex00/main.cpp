@@ -6,11 +6,11 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 16:57:26 by lraggio           #+#    #+#             */
-/*   Updated: 2026/01/12 19:05:06 by lraggio          ###   ########.fr       */
+/*   Updated: 2026/01/18 08:28:06 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Whatever.hpp"
+#include "whatever.hpp"
 
 int	main() {
 	int a = 2;

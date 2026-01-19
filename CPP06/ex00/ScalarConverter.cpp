@@ -6,7 +6,7 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 19:52:16 by lraggio           #+#    #+#             */
-/*   Updated: 2026/01/08 17:49:20 by lraggio          ###   ########.fr       */
+/*   Updated: 2026/01/19 16:39:53 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void HandleScalarTypes::handleChar(const std::string& input) {
 	char* end;
 	double value = std::strtod(input.c_str(), &end);
 
-	if (*end != '\0') {
+	if (*end != '\0' && !(*end == 'f' && *(end + 1) == '\0')) {
 		std::cout << "impossible" << std::endl;
 		return ;
 	}
@@ -92,10 +92,15 @@ void	HandleScalarTypes::handleInt(const std::string& input) {
 		return ;
 	}
 
+	if (input.length() == 1 && !std::isdigit(input[0])) {
+		std::cout << static_cast<int>(input[0]) << std::endl;
+		return ;
+	}
+
 	char* end;
 	double value = std::strtod(input.c_str(), &end);
 
-	if (*end != '\0') {
+	if (*end != '\0' && !(*end == 'f' && *(end + 1) == '\0')) {
 		std::cout << "impossible" << std::endl;
 		return ;
 	}
@@ -122,6 +127,12 @@ void	HandleScalarTypes::handleFloat(const std::string& input) {
 	}
 	if (input == "-inf" || input == "-inff") {
 		std::cout << "-inff" << std::endl;
+		return ;
+	}
+
+	if (input.length() == 1 && !std::isdigit(input[0])) {
+		float f = static_cast<float>(input[0]);
+		std::cout << f << ".0f" << std::endl;
 		return ;
 	}
 
@@ -160,6 +171,12 @@ void	HandleScalarTypes::handleDouble(const std::string& input) {
 	}
 	if (input == "-inf" || input == "-inff") {
 		std::cout << "-inf" << std::endl;
+		return ;
+	}
+
+	if (input.length() == 1 && !std::isdigit(input[0])) {
+		double f = static_cast<double>(input[0]);
+		std::cout << f << ".0" << std::endl;
 		return ;
 	}
 

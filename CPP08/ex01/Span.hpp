@@ -6,7 +6,7 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 08:34:42 by lraggio           #+#    #+#             */
-/*   Updated: 2026/01/18 19:22:49 by lraggio          ###   ########.fr       */
+/*   Updated: 2026/01/20 14:38:15 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include <iostream>
 # include <stdexcept>
 # include <vector>
+# include <iterator>
 
 class Span {
 	private:
@@ -33,8 +34,18 @@ class Span {
 		~Span();
 
 		void	addNumber(unsigned int n);
-		Span	shortestSpan();
-		Span	longestSpan();
+		unsigned int	shortestSpan(); //unsigned int porque é uma distância!!!
+		unsigned int	longestSpan();
+
+		//Adiciona múltiplos números usando um range de iterador, pra que n precise rodar addNumber x vezes
+		template <typename Iterator> //aceita qualquer tipo de iterador
+			void		addNumber(Iterator begin, Iterator end) { //begin: início, end: um após o último
+				unsigned int countElements = std::distance(begin, end);
+				if (this->_v.size() + countElements > this->_n) { //Garante que n vai ultrapassar o limite máximo definido no construtor
+					throw std::runtime_error( RED "Span is full" RESET);
+				}
+				this->_v.insert(this->_v.end(), begin, end); //dá push back item por item, de begin a end
+			}
 };
 
 #endif

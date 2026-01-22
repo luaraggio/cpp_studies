@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
+/*   By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 08:34:42 by lraggio           #+#    #+#             */
-/*   Updated: 2026/01/20 19:57:26 by lraggio          ###   ########.fr       */
+/*   Updated: 2026/01/22 19:11:04 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # define BLUE "\033[1;34m"
 
 # include <iostream>
+# include <deque>
+# include <stack>
 
 // ** Como stack de fato é:
 // template <class T, class Container = std::deque<T> >

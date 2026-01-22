@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
+/*   By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 08:34:42 by lraggio           #+#    #+#             */
-/*   Updated: 2026/01/20 14:38:15 by lraggio          ###   ########.fr       */
+/*   Updated: 2026/01/22 19:08:16 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include <stdexcept>
 # include <vector>
 # include <iterator>
+#include <algorithm>
 
 class Span {
 	private:

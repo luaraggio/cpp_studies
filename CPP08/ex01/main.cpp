@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
+/*   By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 10:00:29 by lraggio           #+#    #+#             */
-/*   Updated: 2026/01/20 14:40:01 by lraggio          ###   ########.fr       */
+/*   Updated: 2026/01/22 18:13:02 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 #include <ctime>
+#include <cstdlib>
 
 int main() {
 	std::cout << PINK "============================== BASIC SUBJECT TEST ===========================" RESET << std::endl;
@@ -30,10 +31,10 @@ int main() {
 	std::cout << PINK "======================== TESTING WITH 10.000 NUMBERS ========================" RESET << std::endl;
 
 	Span bigSpan(10000);
-	std::srand(std::time(NULL)); //seed
+	srand(std::time(NULL)); //seed
 
 	for (int i = 0; i < 10000; ++i) {
-		bigSpan.addNumber(std::rand());
+		bigSpan.addNumber(rand());
 	}
 
 	std::cout << "Shortest span: " << bigSpan.shortestSpan() << std::endl;
@@ -44,7 +45,7 @@ int main() {
 
 	std::vector<int> values;
 	for (int i = 0; i < 10; ++i) {
-		values.push_back(std::rand() % 100);
+		values.push_back(rand() % 100);
 	}
 
 	Span rangeSpan(100);

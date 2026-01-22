@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
+/*   By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 10:00:29 by lraggio           #+#    #+#             */
-/*   Updated: 2026/01/18 16:11:05 by lraggio          ###   ########.fr       */
+/*   Updated: 2026/01/22 18:09:38 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "cstdlib"
 #include "ctime"
 #include <list>
+#include <vector>
 
 int main() {
 	std::cout << PINK "================= TESTS ================" RESET << std::endl;

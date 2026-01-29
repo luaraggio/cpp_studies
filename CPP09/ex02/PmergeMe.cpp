@@ -6,12 +6,14 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 10:34:44 by lraggio           #+#    #+#             */
-/*   Updated: 2026/01/28 21:21:35 by lraggio          ###   ########.fr       */
+/*   Updated: 2026/01/29 15:34:33 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 #include <climits>
+#include <ctime>
+#include <cstdlib>
 
 PmergeMe::PmergeMe() {}
 
@@ -34,22 +36,22 @@ void PmergeMe::parseInput(char **argv) {
 		std::string s(argv[i]);
 
 		if (s.empty()) {
-			throw std::runtime_error("Error: empty input.");
+			throw std::runtime_error("Error");
 		}
 
 		for (size_t j = 0; j < s.size(); j++) {
 			if (!isdigit(s[j])) {
-				throw std::runtime_error("Error: non-numeric character found.");
+				throw std::runtime_error("Error");
 			}
 		}
 
-		long n = std::strtol(s.c_str(), NULL, 10);
+		long n = std::strtol(s.c_str(), NULL, 10); //base decimal
 		if (n <= 0) {
-			throw std::runtime_error("Error: number must be a positive integer.");
+			throw std::runtime_error("Error");
 		}
 
 		if (n > INT_MAX) {
-			throw std::runtime_error("Error: number out of range.");
+			throw std::runtime_error("Error");
 		}
 
 		this->_v.push_back(n);
@@ -165,12 +167,12 @@ void PmergeMe::performPmergeMe(char **argv) {
 	std::cout << std::endl;
 
 	//mede tempo do vector
-	clock_t startVec = clock();
-	fordJohnsonVector(this->_v);
-	clock_t endVec = clock();
+	clock_t startVec = clock(); //guarda o tempo antes de medir
+	fordJohnsonVector(this->_v); //executa o algoritmo
+	clock_t endVec = clock(); //guarda o tempo depois de medir
 
 	double timeVec = static_cast<double>(endVec - startVec)
-		/ CLOCKS_PER_SEC * 1e6;
+		/ CLOCKS_PER_SEC * 1e6; //número de ticks por segundo / unidades de clock por segundo * 10 elevado a 6 (microssegundos)
 
 	//mede tempo do deque
 	clock_t startDeq = clock();

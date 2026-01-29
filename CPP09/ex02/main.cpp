@@ -6,7 +6,7 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 10:18:10 by lraggio           #+#    #+#             */
-/*   Updated: 2026/01/21 17:05:25 by lraggio          ###   ########.fr       */
+/*   Updated: 2026/01/29 15:14:51 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(int argc, char **argv) {
 	if (argc < 2) {
-		std::cerr << "Error: arguments." << std::endl;
+		std::cerr << "Error: arguments. It must be ./PmergeMe <sequence>." << std::endl;
 		return (-1);
 	}
 

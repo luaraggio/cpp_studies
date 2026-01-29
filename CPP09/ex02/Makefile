@@ -29,7 +29,6 @@ clean:
 fclean:
 			@rm -f $(NAME)
 			@rm -f $(OBJS)
-			@rm -f *_shrubbery
 			@echo "$(BLUE) 🧼 All cleaned$(RESET)"
 
 re:			fclean all

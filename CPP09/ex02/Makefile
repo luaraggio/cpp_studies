@@ -46,8 +46,8 @@ test_mac: all
 	@out=$$(./PmergeMe 3 5 9 7 4 2>&1); \
 	echo "$$out"; \
 	echo "$$out" | grep -q "After: 3 4 5 7 9" && \
-	echo "$(GREEN)Result: OK ✅$(RESET)" || \
-	echo "$(RED)Result: KO ❌$(RESET)"
+	echo "$(GREEN)Result: OK$(RESET)" || \
+	echo "$(RED)Result: KO$(RESET)"
 
 	@echo
 	@echo "[TEST 2] Large input (jot)"
@@ -56,8 +56,8 @@ test_mac: all
 	@out=$$(./PmergeMe $$(jot -r 3000 1 100000) 2>&1); \
 	echo "$$out" | head -n 5; \
 	echo "$$out" | grep -q "Time to process a range of 3000 elements" && \
-	echo "$(GREEN)Result: OK ✅$(RESET)" || \
-	echo "$(RED)Result: KO ❌$(RESET)"
+	echo "$(GREEN)Result: OK$(RESET)" || \
+	echo "$(RED)Result: KO$(RESET)"
 
 	@echo
 	@echo "[TEST 3] Error handling"
@@ -66,13 +66,14 @@ test_mac: all
 	@out=$$(./PmergeMe -1 2 2>&1); \
 	echo "$$out"; \
 	if [ "$$out" = "Error" ] || echo "$$out" | grep -q "^Error"; then \
-		echo "$(GREEN)Result: OK ✅$(RESET)"; \
+		echo "$(GREEN)Result: OK$(RESET)"; \
 	else \
-		echo "$(RED)Result: KO ❌$(RESET)"; \
+		echo "$(RED)Result: KO$(RESET)"; \
 	fi
 
 	@echo
 	@echo "$(PINK)========= END OF TESTS (macOS) =========$(RESET)"
+
 
 test_linux: all
 	@echo "$(PINK)=========== PMERGEME TESTS (Linux) ===========$(RESET)"
@@ -84,8 +85,8 @@ test_linux: all
 	@out=$$(./PmergeMe 3 5 9 7 4 2>&1); \
 	echo "$$out"; \
 	echo "$$out" | grep -q "After: 3 4 5 7 9" && \
-	echo "$(GREEN)Result: OK ✅$(RESET)" || \
-	echo "$(RED)Result: KO ❌$(RESET)"
+	echo "$(GREEN)Result: OK$(RESET)" || \
+	echo "$(RED)Result: KO$(RESET)"
 
 	@echo
 	@echo "[TEST 2] Large input (shuf)"
@@ -94,8 +95,8 @@ test_linux: all
 	@out=$$(./PmergeMe $$(shuf -i 1-100000 -n 3000) 2>&1); \
 	echo "$$out" | head -n 5; \
 	echo "$$out" | grep -q "Time to process a range of 3000 elements" && \
-	echo "$(GREEN)Result: OK ✅$(RESET)" || \
-	echo "$(RED)Result: KO ❌$(RESET)"
+	echo "$(GREEN)Result: OK$(RESET)" || \
+	echo "$(RED)Result: KO$(RESET)"
 
 	@echo
 	@echo "[TEST 3] Error handling"
@@ -104,9 +105,9 @@ test_linux: all
 	@out=$$(./PmergeMe -1 2 2>&1); \
 	echo "$$out"; \
 	if [ "$$out" = "Error" ] || echo "$$out" | grep -q "^Error"; then \
-		echo "$(GREEN)Result: OK ✅$(RESET)"; \
+		echo "$(GREEN)Result: OK$(RESET)"; \
 	else \
-		echo "$(RED)Result: KO ❌$(RESET)"; \
+		echo "$(RED)Result: KO$(RESET)"; \
 	fi
 
 	@echo

@@ -6,14 +6,12 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 10:34:44 by lraggio           #+#    #+#             */
-/*   Updated: 2026/01/28 21:21:07 by lraggio          ###   ########.fr       */
+/*   Updated: 2026/01/28 22:32:17 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
 #include <sstream>
-
-#include "RPN.hpp"
 
 RPN::RPN() {}
 
@@ -43,22 +41,22 @@ void RPN::performRPN(const std::string& expression) {
 	while (ss >> token) {
 
 		if (isNumberToken(token)) {
-			this->_stack.push(token[0] - '0');
+			this->_stack.push(token[0] - '0'); //se for número e válido, passo pra stack
 		}
 
-		else if (isOperatorToken(token)) {
+		else if (isOperatorToken(token)) { //se for operador
 
 			if (this->_stack.size() < 2) {
 				throw std::runtime_error("Error: not enough operands.");
 			}
 
-			int op2 = this->_stack.top();
+			int op2 = this->_stack.top(); //guardo quem está no topo 'antes'
 			this->_stack.pop();
-			int op1 = this->_stack.top();
+			int op1 = this->_stack.top(); //guardo quem está no topo 'atual'
 			this->_stack.pop();
 
-			int result = performOperations(op1, op2, token);
-			this->_stack.push(result);
+			int result = performOperations(op1, op2, token); //faço a operação
+			this->_stack.push(result); //empilho o resultado
 		}
 
 		else {

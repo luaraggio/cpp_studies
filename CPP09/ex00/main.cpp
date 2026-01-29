@@ -6,7 +6,7 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 20:20:56 by lraggio           #+#    #+#             */
-/*   Updated: 2026/01/21 15:06:35 by lraggio          ###   ########.fr       */
+/*   Updated: 2026/01/28 22:03:18 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <limits>
 
 int	main(int argc, char **argv) {
-	if (argc < 2) {
+	if (argc != 2) {
 		std::cerr << "Error: could not open file." << std::endl;
 		return (-1);
 	}

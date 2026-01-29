@@ -6,7 +6,7 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 14:47:28 by lraggio           #+#    #+#             */
-/*   Updated: 2026/01/28 21:18:50 by lraggio          ###   ########.fr       */
+/*   Updated: 2026/01/28 22:16:09 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,26 +28,16 @@ BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange &rhs) {
 	return (*this);
 }
 
-bool	BitcoinExchange::isValidValue(double value) const {
-	if (value < 0) {
-		return (false);
-	}
-	if (value > 1000) {
-		return (false);
-	}
-	return (true);
-}
-
 bool	BitcoinExchange::isValidDate(const std::string& date) const {
 	if (date.length() != 10) { //para ver se tem a quantidade para 21-05-2001
 		return (false);
 	}
 
-	if (date[4] != '-' || date[7] != '-') { //se houver outro separador em DD-MM-YEAR
+	if (date[4] != '-' || date[7] != '-') { //verifica posição dos separadores
 		return (false);
 	}
 
-	int year  = std::atoi(date.substr(0, 4).c_str());
+	int year  = std::atoi(date.substr(0, 4).c_str()); //substring p/ ano -> char -> int
 	int month = std::atoi(date.substr(5, 2).c_str());
 	int day   = std::atoi(date.substr(8, 2).c_str());
 
@@ -76,12 +66,12 @@ bool	BitcoinExchange::isValidDate(const std::string& date) const {
 		31  // Dec
 	};
 
-	if (month == 2) { //ano bissextp
+	if (month == 2) { //tratamento de fevereiro p/ ano bissexto
 		bool leap = (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
 		if (day > (leap ? 29 : 28)) {
 			return (false);
 		}
-	} else {
+	} else { //trata 30 e 31 de outros anos
 		if (day > daysInMonth[month - 1]) {
 			return (false);
 		}
@@ -91,20 +81,23 @@ bool	BitcoinExchange::isValidDate(const std::string& date) const {
 
 double BitcoinExchange::getRateForDate(const std::string& date) const {
 	std::map<std::string, double>::const_iterator it = this->_rates.lower_bound(date);
+	//lower_bound retorna a menor chave >= data ou end() se todas forem menores
 
 	if (it == this->_rates.end()) {
-		--it; // usa a última data disponível
+		--it; // usa a última data disponível, se a data data do input for maior que todas do banco
 		return (it->second);
 	}
 
-	if (it->first == date)
-		return (it->second);
+	if (it->first == date) {
+		return (it->second); //retorna o exato valor daquela 'first' (data) específica
+	}
 
-	if (it == this->_rates.begin())
+	if (it == this->_rates.begin()) { //caso da data menor que tudo
 		return (it->second); // usa a mais antiga disponível
+	}
 
 	--it;
-	return (it->second);
+	return (it->second); //data não existe -> usa a anterior
 }
 
 void BitcoinExchange::parseDatabase(const std::string& filename) {
@@ -121,16 +114,39 @@ void BitcoinExchange::parseDatabase(const std::string& filename) {
 		std::string date;
 		std::string rateStr;
 
-		if (!std::getline(ss, date, ',') || !std::getline(ss, rateStr))
-			continue;
+		if (!std::getline(ss, date, ',') || !std::getline(ss, rateStr)) {
+			continue ;
+		}
 
 		double rate = std::strtod(rateStr.c_str(), NULL);
 		this->_rates[date] = rate;
 	}
 }
 
+bool	BitcoinExchange::isValidValue(const std::string& valueStr, double& value) const {
+	char *end;
+	value = std::strtod(valueStr.c_str(), &end);
+
+	if (end == valueStr.c_str() || *end != '\0') { //valor não foi convertido ou sobru lixo depois do número
+		std::cerr << "Error: bad input => " << valueStr << std::endl;
+		return (false);
+	}
+
+	if (value < 0) {
+		std::cerr << "Error: not a positive number." << std::endl;
+		return (false);
+	}
+
+	if (value > 1000) {
+		std::cerr << "Error: too large a number." << std::endl;
+		return (false);
+	}
+	return (true);
+}
+
+
 void BitcoinExchange::parseInputFile(const std::string& filename) {
-	std::ifstream file(filename.c_str());
+	std::ifstream file(filename.c_str()); //precisa ser c_str() porque file() não compila com std::string
 	if (!file.is_open()) {
 		std::cerr << "Error: could not open file." << std::endl;
 		return ;
@@ -139,17 +155,17 @@ void BitcoinExchange::parseInputFile(const std::string& filename) {
 	std::string line;
 	std::getline(file, line); // ignora header
 
-	while (std::getline(file, line)) {
-		std::istringstream ss(line);
+	while (std::getline(file, line)) { //lê o arquivo linha por linha
+		std::istringstream ss(line); //transforma string em stream p/ facilitar gerenciamento
 		std::string date;
 		std::string valueStr;
 
-		if (!std::getline(ss, date, '|') || !std::getline(ss, valueStr)) {
+		if (!std::getline(ss, date, '|') || !std::getline(ss, valueStr)) { //divide a linha usando "|" como separador
 			std::cerr << "Error: bad input => " << line << std::endl;
-			continue ;
+			continue ; //pula pra próxima linha
 		}
 
-		// trim
+		//remove espaços no final da data e no início do valor
 		date.erase(date.find_last_not_of(" \t") + 1);
 		valueStr.erase(0, valueStr.find_first_not_of(" \t"));
 
@@ -158,18 +174,12 @@ void BitcoinExchange::parseInputFile(const std::string& filename) {
 			continue ;
 		}
 
-		double value = std::strtod(valueStr.c_str(), NULL);
-
-		if (value < 0) {
-			std::cerr << "Error: not a positive number." << std::endl;
-			continue ;
-		}
-		if (value > 1000) {
-			std::cerr << "Error: too large a number." << std::endl;
+		double value;
+		if (!isValidValue(valueStr, value)) {
 			continue ;
 		}
 
 		double rate = getRateForDate(date);
-		std::cout << date << " => " << value << " = " << value * rate << std::endl;
+		std::cout << date << " => " << value << " = " << value * rate << std::endl; //faz a conta e o formato
 	}
 }

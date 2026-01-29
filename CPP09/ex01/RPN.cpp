@@ -6,7 +6,7 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 10:34:44 by lraggio           #+#    #+#             */
-/*   Updated: 2026/01/21 15:45:37 by lraggio          ###   ########.fr       */
+/*   Updated: 2026/01/28 21:21:07 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ RPN::RPN (const RPN& other) : _stack(other._stack) {}
 
 RPN& RPN::operator=(const RPN& other) {
 	if (this != &other) {
-		_stack = other._stack;
+		this->_stack = other._stack;
 	}
 	return (*this);
 }
@@ -43,22 +43,22 @@ void RPN::performRPN(const std::string& expression) {
 	while (ss >> token) {
 
 		if (isNumberToken(token)) {
-			_stack.push(token[0] - '0');
+			this->_stack.push(token[0] - '0');
 		}
 
 		else if (isOperatorToken(token)) {
 
-			if (_stack.size() < 2) {
+			if (this->_stack.size() < 2) {
 				throw std::runtime_error("Error: not enough operands.");
 			}
 
-			int op2 = _stack.top();
-			_stack.pop();
-			int op1 = _stack.top();
-			_stack.pop();
+			int op2 = this->_stack.top();
+			this->_stack.pop();
+			int op1 = this->_stack.top();
+			this->_stack.pop();
 
 			int result = performOperations(op1, op2, token);
-			_stack.push(result);
+			this->_stack.push(result);
 		}
 
 		else {
@@ -66,10 +66,10 @@ void RPN::performRPN(const std::string& expression) {
 		}
 	}
 
-	if (_stack.size() != 1) {
+	if (this->_stack.size() != 1) {
 		throw std::runtime_error("Error: invalid expression."); //1 2 3 +
 	}
-	std::cout << _stack.top() << std::endl;
+	std::cout << this->_stack.top() << std::endl;
 }
 
 int RPN::performOperations(int op1, int op2, const std::string& op) {

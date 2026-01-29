@@ -6,7 +6,7 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 14:47:28 by lraggio           #+#    #+#             */
-/*   Updated: 2026/01/21 15:40:47 by lraggio          ###   ########.fr       */
+/*   Updated: 2026/01/28 21:18:50 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ BitcoinExchange::BitcoinExchange(const BitcoinExchange &other) : _rates(other._r
 
 BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange &rhs) {
 	if (this != &rhs) {
-		_rates = rhs._rates;
+		this->_rates = rhs._rates;
 	}
 	return (*this);
 }
@@ -90,9 +90,9 @@ bool	BitcoinExchange::isValidDate(const std::string& date) const {
 }
 
 double BitcoinExchange::getRateForDate(const std::string& date) const {
-	std::map<std::string, double>::const_iterator it = _rates.lower_bound(date);
+	std::map<std::string, double>::const_iterator it = this->_rates.lower_bound(date);
 
-	if (it == _rates.end()) {
+	if (it == this->_rates.end()) {
 		--it; // usa a última data disponível
 		return (it->second);
 	}
@@ -100,7 +100,7 @@ double BitcoinExchange::getRateForDate(const std::string& date) const {
 	if (it->first == date)
 		return (it->second);
 
-	if (it == _rates.begin())
+	if (it == this->_rates.begin())
 		return (it->second); // usa a mais antiga disponível
 
 	--it;
@@ -114,7 +114,7 @@ void BitcoinExchange::parseDatabase(const std::string& filename) {
 	}
 
 	std::string line;
-	std::getline(file, line); // ignore header
+	std::getline(file, line); // ignora header
 
 	while (std::getline(file, line)) {
 		std::istringstream ss(line);
@@ -125,7 +125,7 @@ void BitcoinExchange::parseDatabase(const std::string& filename) {
 			continue;
 
 		double rate = std::strtod(rateStr.c_str(), NULL);
-		_rates[date] = rate;
+		this->_rates[date] = rate;
 	}
 }
 

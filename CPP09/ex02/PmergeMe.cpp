@@ -6,11 +6,12 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 10:34:44 by lraggio           #+#    #+#             */
-/*   Updated: 2026/01/21 17:12:21 by lraggio          ###   ########.fr       */
+/*   Updated: 2026/01/28 21:21:35 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
+#include <climits>
 
 PmergeMe::PmergeMe() {}
 

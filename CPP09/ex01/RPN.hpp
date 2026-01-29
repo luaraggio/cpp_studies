@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Rpn.hpp                                            :+:      :+:    :+:   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 10:18:47 by lraggio           #+#    #+#             */
-/*   Updated: 2026/01/21 15:45:06 by lraggio          ###   ########.fr       */
+/*   Updated: 2026/01/28 21:19:29 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class	RPN {
 		RPN();
 		~RPN();
 		RPN (const RPN& other);
-		&RPN operator=(const RPN& other);
+		RPN& operator=(const RPN& other);
 
 		int performOperations(int op1, int op2, const std::string& op);
 		void performRPN(const std::string& input);
